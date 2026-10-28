@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "TYC · 田*诚的数字主场",
+  "short_name": "TYC Home",
+  "description": "A world of my own. TYC 的个人数字主场。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eeede7",
+  "theme_color": "#eeede7",
+  "icons": [
+    { "src": "./assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#eeede7">
+  <meta name="description" content="我是田*诚，TYC。欢迎来到我的数字主场。探索我的世界，进入 TYC Phigros。">
+  <meta name="application-name" content="TYC · Home">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta property="og:title" content="TYC — A world of my own.">
+  <meta property="og:description" content="田*诚的个人主界面。想象不设限，热爱有回响。">
+  <title>TYC — A world of my own.</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="signature" viewBox="0 0 300 120">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke-width="3.5" d="M16 42C51 27 102 22 132 27M83 23C72 43 61 69 57 89C55 101 61 103 74 94M107 36C102 61 114 70 130 52L157 24M138 48C129 64 119 89 119 98C121 105 134 97 149 85M231 29C228 8 181 21 168 48C148 91 187 102 229 65"/>
+          <path stroke-width="2" d="M37 109C107 87 182 95 258 86M218 81L274 75M248 33L254 30"/>
+        </g>
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    </defs>
+  </svg>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="TYC 主页"><span>TYC<span class="registered">®</span></span><span class="wordmark-caption">PERSONAL<br>UNIVERSE</span></a>
+      <nav aria-label="主导航">
+        <a class="nav-link active" href="#home" aria-current="page">主页<span>01</span></a>
+        <a class="nav-link" href="#worlds">我的世界<span>02</span></a>
+        <a class="nav-link" href="#about">关于我<span>03</span></a>
+      </nav>
+      <button class="motion-toggle" type="button" aria-pressed="true" aria-label="关闭动态效果"><span class="motion-icon" aria-hidden="true">✳</span><span class="motion-label">动态开启</span></button>
+    </header>
+
+    <main id="main">
+      <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span>独立表达，自有引力<span class="edition">VOL. 001</span></div>
+          <h1 id="hero-title" lang="en">A world<br>of <em>my own.</em><span class="title-star" aria-hidden="true">✳</span></h1>
+          <p class="intro">我是田*诚，<strong>TYC</strong>。<br>欢迎来到我的数字主场。</p>
+          <div class="hero-bottom">
+            <a class="explore-link" href="#worlds"><span class="circle-arrow" aria-hidden="true">↙</span><span>探索我的世界<small>SCROLL TO EXPLORE</small></span></a>
+            <div class="hero-signature"><svg aria-label="TYC 个人签名" role="img"><use href="#signature"/></svg><span>PERSONALLY SIGNED.</span></div>
+          </div>
+        </div>
+        <div class="sculpture-panel" id="sculpture-panel">
+          <span class="object-index">OBJECT — 001</span>
+          <div class="orbit-guide orbit-guide-one" aria-hidden="true"></div>
+          <div class="orbit-guide orbit-guide-two" aria-hidden="true"></div>
+          <span class="axis axis-top" aria-hidden="true">+</span><span class="axis axis-bottom" aria-hidden="true">+</span>
+          <div class="sculpture-shadow" aria-hidden="true"></div>
+          <div class="sculpture-fallback" aria-hidden="true"><div></div><div></div><div></div></div>
+          <canvas id="sculpture" tabindex="0" role="img" aria-label="交互式金属纽结雕塑。拖动或使用方向键旋转，按 Home 复位。"></canvas>
+          <div class="object-caption"><span>THE SHAPE OF<br><b>POSSIBILITY.</b></span><span class="drag-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12V7a2 2 0 0 1 4 0v5-8a2 2 0 0 1 4 0v8-5a2 2 0 0 1 4 0v8c0 5-3 7-7 7-3 0-5-2-7-4l-3-4a2 2 0 0 1 3-3l2 1Z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><span>拖动，换个视角<small>DRAG TO ROTATE</small></span></span></div>
+        </div>
+      </section>
+
+      <section id="worlds" class="worlds" aria-labelledby="worlds-title">
+        <div class="section-bar"><h2 id="worlds-title">我的世界 <span>/ SELECTED UNIVERSE</span></h2><span class="section-note">由热爱出发，向无限延伸 ↘</span></div>
+        <a class="portal-card" id="phigros-link" href="https://tycofficial.github.io/phigros/" aria-label="进入 TYC Phigros，播放放大转场后在当前窗口打开">
+          <div class="portal-content">
+            <div class="portal-eyebrow"><span class="live-dot"></span>THE RHYTHM UNIVERSE<span class="portal-number">01 /</span></div>
+            <div class="portal-title"><span class="portal-owner">TYC</span><h3>Phigros<span class="title-dot">.</span></h3></div>
+            <p>让每一次触碰，都与热爱同频。</p>
+            <div class="portal-action"><span>进入 TYC Phigros <span class="portal-action-en">ENTER THE EXPERIENCE</span></span><span class="portal-arrow"><svg aria-hidden="true"><use href="#arrow"/></svg></span></div>
+          </div>
+          <div class="rhythm-art" aria-hidden="true">
+            <div class="rhythm-orbit"></div><div class="rhythm-core"></div><div class="rhythm-grid"></div>
+            <div class="note note-one"></div><div class="note note-two"></div><div class="note note-three"></div><div class="note note-four"></div><div class="note-hold"></div><div class="judge-line"></div>
+            <span class="rhythm-number">φ</span><span class="rhythm-coordinate">JUDGEMENT LINE / 001</span>
+          </div>
+          <span class="portal-url">TYCOFFICIAL.GITHUB.IO / PHIGROS <svg aria-hidden="true"><use href="#arrow"/></svg></span>
+        </a>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="about-label"><span class="eyebrow">BEHIND THE SIGNATURE</span><h2 id="about-title">不止一个名字。<br>是我的每一种可能。</h2></div>
+        <div class="about-copy"><p>这里属于 <strong>TYC · 田*诚</strong>。</p><p>把想象变成可以触碰的世界，<br>把热爱写成自己的作品。<br>我的宇宙，始终在生长。</p><div class="about-tags"><span>独立创造</span><span>节奏与热爱</span><span>无限可能</span></div></div>
+        <div class="identity-stamp"><svg aria-label="TYC 签名" role="img"><use href="#signature"/></svg><span>ONE OF ONE.<br>ALWAYS TYC.</span></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>© <span id="year">2026</span> TYC · 田*诚</span><span class="footer-motto">A PERSONAL UNIVERSE. NO LIMITS.</span><span class="local-time"><span class="status-dot"></span>SHANGHAI <time id="clock">--:--:--</time></span><button type="button" id="install-button" hidden>添加到主屏幕 ↗</button><a href="#home" class="back-top" aria-label="回到顶部">↑</a></footer>
+  </div>
+  <div id="portal-overlay" class="portal-overlay" aria-hidden="true"><div class="transition-grid"></div><div class="transition-center"><span class="transition-kicker">TYC UNIVERSE / 01</span><div class="transition-title">Phigros<span>.</span></div><div class="transition-line"></div><p>即将进入节奏宇宙</p></div><span class="transition-footer">SIGNED TYC. BUILT FOR THE RHYTHM.</span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript-note">你可以直接点击 TYC Phigros 入口。开启 JavaScript 可体验 3D 雕塑与放大转场。</div></noscript>
+</body>
+</html>

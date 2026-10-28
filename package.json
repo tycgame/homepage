@@ -1,0 +1,9 @@
+{
+  "name": "tyc-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "TYC's personal universe — a dependency-free 3D progressive web app.",
+  "scripts": { "test": "node --test", "check": "node scripts/check.mjs", "build": "node scripts/build.mjs" },
+  "engines": { "node": ">=20" }
+}
