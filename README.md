@@ -2,6 +2,8 @@
 
 田*诚的个人数字主场。雾白展厅、实时金属 3D 纽结、手写 TYC 签名，以及通往 [TYC Phigros](https://tycofficial.github.io/phigros/) 的卡片放大转场。
 
+![TYC Home 桌面界面预览](docs/preview.jpg)
+
 ## 使用
 
 无需安装依赖。部署整个目录，或使用 Node.js 20+：
