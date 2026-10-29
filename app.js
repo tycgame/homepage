@@ -1,5 +1,5 @@
 import { createSculpture } from './sculpture.js';
-import { attachPortal } from './navigation.js';
+import { startProjectPreloads } from './project-app.js';
 
 const $ = selector => document.querySelector(selector);
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -28,8 +28,9 @@ else reduced.addListener(updateMotion);
 updateMotion();
 
 // Keep the main navigation and transition functional even without WebGL support.
-try { createSculpture($('#sculpture'), motionEnabled); } catch { $('#sculpture-panel').classList.add('no-webgl'); }
-attachPortal($('#phigros-link'), $('#portal-overlay'), motionEnabled);
+let workspaceOpen=false;
+window.addEventListener('tyc:project',event=>{workspaceOpen=event.detail.open;window.dispatchEvent(new Event('tyc:motion'));startClock();});
+try { createSculpture($('#sculpture'), ()=>motionEnabled()&&!workspaceOpen); } catch { $('#sculpture-panel').classList.add('no-webgl'); }
 
 const clock = $('#clock');
 const formatter = new Intl.DateTimeFormat('en-GB', { timeZone:'Asia/Shanghai', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false });
@@ -37,7 +38,7 @@ function updateClock() {
   const now = new Date();clock.textContent = formatter.format(now);clock.dateTime = now.toISOString();$('#year').textContent = String(now.getFullYear());
 }
 let clockTimer;
-function startClock() { clearInterval(clockTimer);updateClock();if (!document.hidden) clockTimer = setInterval(updateClock, 1000); }
+function startClock() { clearInterval(clockTimer);updateClock();if (!document.hidden&&!workspaceOpen) clockTimer = setInterval(updateClock, 1000); }
 document.addEventListener('visibilitychange', startClock);startClock();
 
 const navLinks = [...document.querySelectorAll('.nav-link')];
@@ -53,6 +54,7 @@ if ('IntersectionObserver' in window) {
 
 let toastTimer;
 function toast(message) { clearTimeout(toastTimer);$('#toast').textContent=message;$('#toast').classList.add('visible');toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),5000); }
+startProjectPreloads({motionEnabled,notify:toast});
 const installButton = $('#install-button');
 let installPrompt;
 window.addEventListener('beforeinstallprompt', event => { event.preventDefault();installPrompt=event;installButton.hidden=false; });

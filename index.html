@@ -14,6 +14,7 @@
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
   <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="preconnect" href="https://tycofficial.github.io">
   <link rel="stylesheet" href="./style.css">
   <script type="module" src="./app.js"></script>
 </head>
@@ -66,12 +67,12 @@
 
       <section id="worlds" class="worlds" aria-labelledby="worlds-title">
         <div class="section-bar"><h2 id="worlds-title">我的世界 <span>/ SELECTED UNIVERSE</span></h2><span class="section-note">由热爱出发，向无限延伸 ↘</span></div>
-        <a class="portal-card" id="phigros-link" href="https://tycofficial.github.io/phigros/" aria-label="进入 TYC Phigros，播放放大转场后在当前窗口打开">
+        <a class="portal-card" id="phigros-link" data-project="phigros" data-project-title="TYC Phigros" href="https://tycofficial.github.io/phigros/" aria-label="进入 TYC Phigros，展开预载的真实首页">
           <div class="portal-content">
             <div class="portal-eyebrow"><span class="live-dot"></span>THE RHYTHM UNIVERSE<span class="portal-number">01 /</span></div>
             <div class="portal-title"><span class="portal-owner">TYC</span><h3>Phigros<span class="title-dot">.</span></h3></div>
             <p>让每一次触碰，都与热爱同频。</p>
-            <div class="portal-action"><span>进入 TYC Phigros <span class="portal-action-en">ENTER THE EXPERIENCE</span></span><span class="portal-arrow"><svg aria-hidden="true"><use href="#arrow"/></svg></span></div>
+            <div class="portal-action"><span>进入 TYC Phigros <span class="portal-action-en">ENTER THE EXPERIENCE</span><span class="project-preload-status" data-project-status role="status">首页预载中…</span></span><span class="portal-arrow"><svg aria-hidden="true"><use href="#arrow"/></svg></span></div>
           </div>
           <div class="rhythm-art" aria-hidden="true">
             <div class="rhythm-orbit"></div><div class="rhythm-core"></div><div class="rhythm-grid"></div>
@@ -91,8 +92,14 @@
 
     <footer class="site-footer"><span>© <span id="year">2026</span> TYC · 田*诚</span><span class="footer-motto">A PERSONAL UNIVERSE. NO LIMITS.</span><span class="local-time"><span class="status-dot"></span>SHANGHAI <time id="clock">--:--:--</time></span><button type="button" id="install-button" hidden>添加到主屏幕 ↗</button><a href="#home" class="back-top" aria-label="回到顶部">↑</a></footer>
   </div>
-  <div id="portal-overlay" class="portal-overlay" aria-hidden="true"><div class="transition-grid"></div><div class="transition-center"><span class="transition-kicker">TYC UNIVERSE / 01</span><div class="transition-title">Phigros<span>.</span></div><div class="transition-line"></div><p>即将进入节奏宇宙</p></div><span class="transition-footer">SIGNED TYC. BUILT FOR THE RHYTHM.</span></div>
+  <div id="project-preload-root"></div>
+  <template id="project-stage-template">
+    <section class="project-stage" aria-label="项目窗口">
+      <div class="project-frame-wrap"><iframe class="project-live-frame" loading="eager" allow="fullscreen; autoplay 'none'" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+      <nav class="project-toolbar" aria-label="项目导航"><button class="project-back" type="button" aria-label="返回 TYC 主页"><span aria-hidden="true">←</span> TYC</button><span class="project-workspace-title"></span><a class="project-open-original" target="_blank" rel="noopener noreferrer" aria-label="在新标签页打开原站">原站打开 <span aria-hidden="true">↗</span></a></nav>
+    </section>
+  </template>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <noscript><div class="noscript-note">你可以直接点击 TYC Phigros 入口。开启 JavaScript 可体验 3D 雕塑与放大转场。</div></noscript>
+  <noscript><div class="noscript-note">你可以直接点击 TYC Phigros 入口。开启 JavaScript 可提前加载真实首页并体验放大转场。</div></noscript>
 </body>
 </html>
