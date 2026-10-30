@@ -6,8 +6,12 @@ export function projectURL(value, baseURL) {
   if (url.username || url.password || (url.protocol !== 'https:' && !(url.protocol === 'http:' && url.origin === base.origin))) throw new TypeError('项目地址必须使用 HTTPS');
   return url.href;
 }
-export function freshProjectURL(value, stamp) {
-  const url = new URL(value);url.searchParams.set('__tyc_preload', String(stamp));return url.href;
+export function freshProjectURL(value, revision) {
+  const url=new URL(value);
+  // Initial requests use the real URL and can reuse HTTP/service-worker caches.
+  // Only a detected new server revision gets a stable revision cache key.
+  if(revision){let hash=2166136261;for(const char of revision)hash=Math.imul(hash^char.charCodeAt(0),16777619);url.searchParams.set('__tyc_revision',(hash>>>0).toString(36));}
+  return url.href;
 }
 export function responseVersion(response) {
   if (!response.ok) throw new Error(`项目首页响应 ${response.status}`);
@@ -47,7 +51,7 @@ export class ProjectPreloader {
   async run(task) {
     const entry=task.entry;
     try {
-      task.slot=this.createSlot(entry,freshProjectURL(entry.url,`${this.now()}-${++this.sequence}`));
+      task.slot=this.createSlot(entry,freshProjectURL(entry.url,task.version));
       await task.slot.ready;
       if(task.cancelled||this.destroyed||entry.pending!==task||(entry.active&&entry.current)){task.slot.dispose();return;}
       const previous=entry.current;entry.current=task.slot;entry.pending=null;entry.freshAt=this.now();entry.version=task.version;entry.error=null;
@@ -67,6 +71,13 @@ export class ProjectPreloader {
     if(entry.current){this.cancelPending(entry);return entry.current;}
     if(entry.pending){const i=this.queue.indexOf(entry.pending);if(i>0)this.queue.unshift(...this.queue.splice(i,1));}
     return this.prepare(entry,{priority:true});
+  }
+  claim(id){
+    const entry=this.entries.get(id);if(!entry)return null;
+    entry.active=true;entry.check?.abort();
+    if(entry.current){this.cancelPending(entry);return entry.current;}
+    if(!entry.pending)this.prepare(entry,{priority:true}).catch(()=>{});
+    return entry.pending?.slot||null;
   }
   release(id,{discard=false}={}) {
     const entry=this.entries.get(id);if(!entry)return;entry.active=false;

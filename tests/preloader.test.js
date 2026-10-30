@@ -41,7 +41,7 @@ test('a failed cold preload remains failed and can be retried',async()=>{
 });
 test('leaving an opened game disposes audio context ownership and starts a fresh homepage',async()=>{
   const f=fixture();const entry=f.add('phigros');f.slots[0].finish();await tick();await f.pool.acquire('phigros');f.pool.release('phigros',{discard:true});
-  assert.equal(f.slots[0].disposed,1);assert.equal(f.slots.length,2);assert.notEqual(f.slots[0].src,f.slots[1].src);assert.equal(entry.current,null);f.pool.destroy();await tick();
+  assert.equal(f.slots[0].disposed,1);assert.equal(f.slots.length,2);assert.equal(f.slots[0].src,f.slots[1].src);assert.equal(entry.current,null);f.pool.destroy();await tick();
 });
 test('CORS-limited projects refresh idle entries after the fallback age',async()=>{
   const f=fixture();f.add('phigros');f.slots[0].finish();await tick();f.headFailure();await f.pool.checkForUpdates({force:true});assert.equal(f.slots.length,1);
@@ -55,6 +55,14 @@ test('project URLs preserve existing routing but reject unsafe schemes and crede
   assert.equal(projectURL('../other/',base),'https://tycgame.github.io/other/');
   for(const url of ['javascript:alert(1)','data:text/html,hello','https://name:password@example.com/','http://example.com/'])assert.throws(()=>projectURL(url,base));
   const fresh=new URL(freshProjectURL('https://example.com/?level=2#start','new'));
-  assert.equal(fresh.searchParams.get('level'),'2');assert.equal(fresh.searchParams.get('__tyc_preload'),'new');assert.equal(fresh.hash,'#start');
+  assert.equal(fresh.searchParams.get('level'),'2');assert.ok(fresh.searchParams.get('__tyc_revision'));assert.equal(fresh.hash,'#start');
   assert.throws(()=>responseVersion({ok:false,status:404}));
+});
+
+test('initial loads reuse the canonical URL and a revision key is stable',()=>{
+  const url='https://tycofficial.github.io/phigros/';assert.equal(freshProjectURL(url,null),url);assert.equal(freshProjectURL(url,''),url);
+  assert.equal(freshProjectURL(url,'etag-v2'),freshProjectURL(url,'etag-v2'));assert.notEqual(freshProjectURL(url,'etag-v2'),freshProjectURL(url,'etag-v3'));
+});
+test('claim returns a cold in-flight document immediately without awaiting its bundle',async()=>{
+  const f=fixture();f.add('phigros');assert.equal(f.pool.claim('phigros'),f.slots[0]);assert.equal(f.pool.entries.get('phigros').current,null);f.pool.release('phigros');f.pool.destroy();await tick();
 });

@@ -3,103 +3,86 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#eeede7">
-  <meta name="description" content="我是田*诚，TYC。欢迎来到我的数字主场。探索我的世界，进入 TYC Phigros。">
-  <meta name="application-name" content="TYC · Home">
+  <meta name="theme-color" content="#101718">
+  <meta name="description" content="TYC · 田*诚的个人主页。我的项目：TYC Phigros。">
+  <meta name="application-name" content="TYC">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta property="og:title" content="TYC — A world of my own.">
-  <meta property="og:description" content="田*诚的个人主界面。想象不设限，热爱有回响。">
-  <title>TYC — A world of my own.</title>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:title" content="TYC · 田*诚">
+  <meta property="og:description" content="个人主页与 TYC Phigros 项目入口。">
+  <title>TYC · 田*诚</title>
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="preconnect" href="https://tycofficial.github.io">
+  <link rel="dns-prefetch" href="https://tycofficial.github.io">
+  <link rel="prefetch" href="https://tycofficial.github.io/phigros/" as="document">
   <link rel="stylesheet" href="./style.css">
   <script type="module" src="./app.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
-  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <svg class="svg-library" width="0" height="0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <symbol id="signature" viewBox="0 0 300 120">
-        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke-width="3.5" d="M16 42C51 27 102 22 132 27M83 23C72 43 61 69 57 89C55 101 61 103 74 94M107 36C102 61 114 70 130 52L157 24M138 48C129 64 119 89 119 98C121 105 134 97 149 85M231 29C228 8 181 21 168 48C148 91 187 102 229 65"/>
-          <path stroke-width="2" d="M37 109C107 87 182 95 258 86M218 81L274 75M248 33L254 30"/>
-        </g>
-      </symbol>
+      <linearGradient id="alloy" x1="0" y1="0" x2=".72" y2="1"><stop stop-color="#f7f2dd"/><stop offset=".14" stop-color="#a0ada7"/><stop offset=".28" stop-color="#3f6462"/><stop offset=".33" stop-color="#c9ded1"/><stop offset=".37" stop-color="#fff8da"/><stop offset=".54" stop-color="#d6bf97"/><stop offset=".72" stop-color="#627d75"/><stop offset=".77" stop-color="#f4ebc9"/><stop offset="1" stop-color="#77918b"/></linearGradient>
+      <linearGradient id="edge-light" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e2f4e0"/><stop offset=".3" stop-color="#f5d396"/><stop offset=".55" stop-color="#27484b"/><stop offset=".77" stop-color="#c0e3d6"/><stop offset="1" stop-color="#64756a"/></linearGradient>
+      <linearGradient id="card-line"><stop stop-color="#ddbe8d"/><stop offset="1" stop-color="#71bdba"/></linearGradient>
+      <radialGradient id="dial-light"><stop stop-color="#e4d8b8" stop-opacity=".2"/><stop offset="1" stop-color="#819e99" stop-opacity="0"/></radialGradient>
+      <symbol id="signature" viewBox="0 0 300 120"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path stroke-width="3.6" d="M16 42C51 27 102 22 132 27M83 23C72 43 61 69 57 89C55 101 61 103 74 94M107 36C102 61 114 70 130 52L157 24M138 48C129 64 119 89 119 98C121 105 134 97 149 85M231 29C228 8 181 21 168 48C148 91 187 102 229 65"/><path stroke-width="1.7" d="M37 109C107 87 182 95 258 86M218 81L274 75M248 33L254 30"/></g></symbol>
+      <symbol id="tyc-solid" viewBox="0 0 720 300"><path d="M35 52H236V95H159V247H111V95H35ZM248 52H304L356 135L408 52H464L381 184V247H332V184ZM650 74L622 109C602 94 584 89 565 94C538 100 520 120 519 149C518 179 536 201 563 206C585 211 606 204 625 186L654 220C625 246 597 257 562 252C506 246 469 206 470 150C471 96 506 57 559 48C594 42 625 51 650 74Z"/></symbol>
       <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+      <symbol id="motion-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4.5" fill="none" stroke="currentColor" transform="rotate(-40 12 12)"/></symbol>
+      <symbol id="github-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.56 9.56 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor"/></symbol>
     </defs>
   </svg>
   <div class="page-shell" id="home">
-    <header class="site-header">
-      <a class="wordmark" href="#home" aria-label="TYC 主页"><span>TYC<span class="registered">®</span></span><span class="wordmark-caption">PERSONAL<br>UNIVERSE</span></a>
-      <nav aria-label="主导航">
-        <a class="nav-link active" href="#home" aria-current="page">主页<span>01</span></a>
-        <a class="nav-link" href="#worlds">我的世界<span>02</span></a>
-        <a class="nav-link" href="#about">关于我<span>03</span></a>
-      </nav>
-      <button class="motion-toggle" type="button" aria-pressed="true" aria-label="关闭动态效果"><span class="motion-icon" aria-hidden="true">✳</span><span class="motion-label">动态开启</span></button>
+    <header class="topbar">
+      <a class="home-sign" href="#home" aria-label="TYC 主页"><svg aria-hidden="true"><use href="#signature"/></svg><span class="header-divider"></span><span>田*诚<span class="header-small">个人主页</span></span></a>
+      <div class="header-actions"><a class="projects-nav" href="#projects">我的项目 <span>01</span></a><button class="motion-toggle icon-button" type="button" aria-label="关闭动态效果" aria-pressed="true"><svg aria-hidden="true"><use href="#motion-icon"/></svg></button><a class="icon-button github-link" href="https://github.com/tycgame" aria-label="TYC 的 GitHub"><svg aria-hidden="true"><use href="#github-icon"/></svg></a></div>
     </header>
-
-    <main id="main">
-      <section id="intro" class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="status-dot"></span>独立表达，自有引力<span class="edition">VOL. 001</span></div>
-          <h1 id="hero-title" lang="en">A world<br>of <em>my own.</em><span class="title-star" aria-hidden="true">✳</span></h1>
-          <p class="intro">我是田*诚，<strong>TYC</strong>。<br>欢迎来到我的数字主场。</p>
-          <div class="hero-bottom">
-            <a class="explore-link" href="#worlds"><span class="circle-arrow" aria-hidden="true">↙</span><span>探索我的世界<small>SCROLL TO EXPLORE</small></span></a>
-            <div class="hero-signature"><svg aria-label="TYC 个人签名" role="img"><use href="#signature"/></svg><span>PERSONALLY SIGNED.</span></div>
+    <main class="home-layout" id="main">
+      <section class="identity" aria-labelledby="identity-title">
+        <div class="identity-heading"><div><span class="section-label">TYC</span><h1 id="identity-title">田<span class="masked-name">*</span>诚</h1></div><span class="identity-line" aria-hidden="true"></span><span class="identity-caption">个人主页</span></div>
+        <div class="brand-stage" id="brand-stage">
+          <div class="stage-halo" aria-hidden="true"></div>
+          <svg class="stage-dial" viewBox="0 0 800 500" aria-hidden="true"><ellipse cx="401" cy="279" rx="325" ry="164" fill="url(#dial-light)"/><g fill="none" stroke="#78a09a"><ellipse cx="401" cy="279" rx="325" ry="164" opacity=".22"/><ellipse cx="401" cy="279" rx="295" ry="147" opacity=".1"/><path d="M52 280h40M711 280h40M400 91v24M400 442v24" opacity=".5"/><path d="M144 176l12 7M644 373l12 7M635 169l-13 8M164 374l-13 8" opacity=".45"/><path d="M110 277H689M401 115V439" stroke-dasharray="2 10" opacity=".13"/></g><circle cx="700" cy="294" r="4" fill="#ddbc8a"/><circle cx="167" cy="166" r="2.5" fill="#7eb8b1"/></svg>
+          <div class="mark-shadow" aria-hidden="true"></div>
+          <div class="brand-interaction" id="brand-interaction" tabindex="0" role="img" aria-label="专为 TYC 绘制的立体标记，可拖动或使用方向键转动，按 Home 复位">
+            <div class="art-float"><div class="monogram" id="monogram">
+              <svg class="metal-layer" style="--layer:10" viewBox="0 0 720 300" aria-hidden="true"><use href="#tyc-solid"/></svg>
+              <svg class="metal-layer" style="--layer:8" viewBox="0 0 720 300" aria-hidden="true"><use href="#tyc-solid"/></svg>
+              <svg class="metal-layer" style="--layer:6" viewBox="0 0 720 300" aria-hidden="true"><use href="#tyc-solid"/></svg>
+              <svg class="metal-layer" style="--layer:4" viewBox="0 0 720 300" aria-hidden="true"><use href="#tyc-solid"/></svg>
+              <svg class="metal-layer" style="--layer:2" viewBox="0 0 720 300" aria-hidden="true"><use href="#tyc-solid"/></svg>
+              <svg class="metal-layer" style="--layer:1" viewBox="0 0 720 300" aria-hidden="true"><use href="#tyc-solid"/></svg>
+              <svg class="metal-front" viewBox="0 0 720 300" aria-hidden="true"><use href="#tyc-solid"/></svg>
+              <svg class="metal-outline" viewBox="0 0 720 300" aria-hidden="true"><use href="#tyc-solid"/></svg>
+            </div></div>
           </div>
-        </div>
-        <div class="sculpture-panel" id="sculpture-panel">
-          <span class="object-index">OBJECT — 001</span>
-          <div class="orbit-guide orbit-guide-one" aria-hidden="true"></div>
-          <div class="orbit-guide orbit-guide-two" aria-hidden="true"></div>
-          <span class="axis axis-top" aria-hidden="true">+</span><span class="axis axis-bottom" aria-hidden="true">+</span>
-          <div class="sculpture-shadow" aria-hidden="true"></div>
-          <div class="sculpture-fallback" aria-hidden="true"><div></div><div></div><div></div></div>
-          <canvas id="sculpture" tabindex="0" role="img" aria-label="交互式金属纽结雕塑。拖动或使用方向键旋转，按 Home 复位。"></canvas>
-          <div class="object-caption"><span>THE SHAPE OF<br><b>POSSIBILITY.</b></span><span class="drag-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12V7a2 2 0 0 1 4 0v5-8a2 2 0 0 1 4 0v8-5a2 2 0 0 1 4 0v8c0 5-3 7-7 7-3 0-5-2-7-4l-3-4a2 2 0 0 1 3-3l2 1Z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg><span>拖动，换个视角<small>DRAG TO ROTATE</small></span></span></div>
+          <div class="stage-foot"><span class="drag-indicator" aria-hidden="true"><i></i>拖动标记</span><span class="owner-signature"><svg role="img" aria-label="TYC 手写签名"><use href="#signature"/></svg><span>田*诚</span></span></div>
         </div>
       </section>
-
-      <section id="worlds" class="worlds" aria-labelledby="worlds-title">
-        <div class="section-bar"><h2 id="worlds-title">我的世界 <span>/ SELECTED UNIVERSE</span></h2><span class="section-note">由热爱出发，向无限延伸 ↘</span></div>
-        <a class="portal-card" id="phigros-link" data-project="phigros" data-project-title="TYC Phigros" href="https://tycofficial.github.io/phigros/" aria-label="进入 TYC Phigros，展开预载的真实首页">
-          <div class="portal-content">
-            <div class="portal-eyebrow"><span class="live-dot"></span>THE RHYTHM UNIVERSE<span class="portal-number">01 /</span></div>
-            <div class="portal-title"><span class="portal-owner">TYC</span><h3>Phigros<span class="title-dot">.</span></h3></div>
-            <p>让每一次触碰，都与热爱同频。</p>
-            <div class="portal-action"><span>进入 TYC Phigros <span class="portal-action-en">ENTER THE EXPERIENCE</span><span class="project-preload-status" data-project-status role="status">首页预载中…</span></span><span class="portal-arrow"><svg aria-hidden="true"><use href="#arrow"/></svg></span></div>
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading"><h2 id="projects-title">我的项目</h2><span>01</span></div>
+        <a class="project-card" id="phigros-link" data-project="phigros" data-project-title="TYC Phigros" href="https://tycofficial.github.io/phigros/" aria-label="进入 TYC Phigros">
+          <div class="project-art" aria-hidden="true">
+            <span class="project-series">TYC / 01</span>
+            <svg class="rhythm-scene" viewBox="0 0 500 330"><defs><linearGradient id="rhythm-floor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#476c67" stop-opacity="0"/><stop offset="1" stop-color="#476c67" stop-opacity=".2"/></linearGradient><radialGradient id="rhythm-orb"><stop stop-color="#b2d0b9" stop-opacity=".16"/><stop offset="1" stop-color="#7bafa5" stop-opacity="0"/></radialGradient></defs><circle cx="281" cy="147" r="139" fill="url(#rhythm-orb)"/><g fill="none" stroke="#8ab7aa"><ellipse cx="279" cy="155" rx="120" ry="119" opacity=".16"/><ellipse cx="279" cy="155" rx="153" ry="149" opacity=".08"/><ellipse cx="279" cy="155" rx="102" ry="117" transform="rotate(-28 279 155)" opacity=".13"/><path d="M58 276H456M78 252H436M96 231H417M111 214H402M126 199H389M135 186H377M144 176H364M153 166H354M183 155L128 277M234 155L218 277M281 155L308 277M327 155L398 277" opacity=".12"/></g><path d="M57 276 181 155H328L456 276Z" fill="url(#rhythm-floor)"/><g class="phi-emblem" fill="none" stroke="url(#card-line)" stroke-width="12"><path d="M279 65V243M277 100C198 100 197 204 277 204C357 204 358 100 277 100Z"/></g><g class="chart-note note-one"><path d="m117 137 59-7 6 11-59 7Z" fill="#92d2d1"/><path d="m120 138 54-6" stroke="#d7f5eb"/></g><g class="chart-note note-two"><path d="m352 196 57-6 6 11-57 6Z" fill="#92d2d1"/><path d="m355 197 52-6" stroke="#d7f5eb"/></g><g class="chart-note note-three"><path d="m307 74 46-5 8 90-46 5Z" fill="#d4ba8120" stroke="#d4ba81" stroke-opacity=".5"/><path d="m311 159 47-5 2 10-47 5Z" fill="#e3c790"/></g><path d="M38 269 467 218" stroke="url(#card-line)" stroke-width="2"/><path d="m271 236 6-7 8 5-6 7Z" fill="#112528" stroke="#e0c59c"/></svg>
+            <span class="art-corner corner-a"></span><span class="art-corner corner-b"></span><span class="art-caption">PHIGROS</span>
           </div>
-          <div class="rhythm-art" aria-hidden="true">
-            <div class="rhythm-orbit"></div><div class="rhythm-core"></div><div class="rhythm-grid"></div>
-            <div class="note note-one"></div><div class="note note-two"></div><div class="note note-three"></div><div class="note note-four"></div><div class="note-hold"></div><div class="judge-line"></div>
-            <span class="rhythm-number">φ</span><span class="rhythm-coordinate">JUDGEMENT LINE / 001</span>
-          </div>
-          <span class="portal-url">TYCOFFICIAL.GITHUB.IO / PHIGROS <svg aria-hidden="true"><use href="#arrow"/></svg></span>
+          <div class="project-info"><div><p class="project-kind">节奏游戏</p><h3>TYC Phigros</h3></div><span class="project-arrow"><svg aria-hidden="true"><use href="#arrow"/></svg></span></div>
+          <div class="project-bottom"><span class="project-status" data-project-status role="status">正在准备开场…</span><span class="enter-label">进入游戏 <span aria-hidden="true">→</span></span></div>
         </a>
-      </section>
-
-      <section class="about" id="about" aria-labelledby="about-title">
-        <div class="about-label"><span class="eyebrow">BEHIND THE SIGNATURE</span><h2 id="about-title">不止一个名字。<br>是我的每一种可能。</h2></div>
-        <div class="about-copy"><p>这里属于 <strong>TYC · 田*诚</strong>。</p><p>把想象变成可以触碰的世界，<br>把热爱写成自己的作品。<br>我的宇宙，始终在生长。</p><div class="about-tags"><span>独立创造</span><span>节奏与热爱</span><span>无限可能</span></div></div>
-        <div class="identity-stamp"><svg aria-label="TYC 签名" role="img"><use href="#signature"/></svg><span>ONE OF ONE.<br>ALWAYS TYC.</span></div>
+        <div class="project-address"><span aria-hidden="true">↗</span><span>tycofficial.github.io/phigros</span></div>
       </section>
     </main>
-
-    <footer class="site-footer"><span>© <span id="year">2026</span> TYC · 田*诚</span><span class="footer-motto">A PERSONAL UNIVERSE. NO LIMITS.</span><span class="local-time"><span class="status-dot"></span>SHANGHAI <time id="clock">--:--:--</time></span><button type="button" id="install-button" hidden>添加到主屏幕 ↗</button><a href="#home" class="back-top" aria-label="回到顶部">↑</a></footer>
+    <footer class="site-footer"><span>© <span id="year">2026</span> TYC · 田*诚</span><span class="footer-rule" aria-hidden="true"></span><span class="footer-owner">TYC</span><button type="button" id="install-button" hidden>添加到主屏幕 <span aria-hidden="true">＋</span></button></footer>
   </div>
-  <div id="project-preload-root"></div>
-  <template id="project-stage-template">
-    <section class="project-stage" aria-label="项目窗口">
-      <div class="project-frame-wrap"><iframe class="project-live-frame" loading="eager" allow="fullscreen; autoplay 'none'" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-      <nav class="project-toolbar" aria-label="项目导航"><button class="project-back" type="button" aria-label="返回 TYC 主页"><span aria-hidden="true">←</span> TYC</button><span class="project-workspace-title"></span><a class="project-open-original" target="_blank" rel="noopener noreferrer" aria-label="在新标签页打开原站">原站打开 <span aria-hidden="true">↗</span></a></nav>
-    </section>
-  </template>
+  <div id="project-preload-root" aria-hidden="true">
+    <div class="project-stage" data-project-stage="phigros" inert aria-hidden="true"><div class="project-frame-wrap"><iframe class="project-live-frame" title="TYC Phigros 预载开场" loading="eager" allow="autoplay 'none'" referrerpolicy="strict-origin-when-cross-origin" tabindex="-1" onload="this.dataset.loaded='true'" src="https://tycofficial.github.io/phigros/"></iframe></div></div>
+  </div>
+  <template id="project-stage-template"><div class="project-stage" inert aria-hidden="true"><div class="project-frame-wrap"><iframe class="project-live-frame" title="项目预载开场" loading="eager" allow="autoplay 'none'" tabindex="-1" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div></template>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <noscript><div class="noscript-note">你可以直接点击 TYC Phigros 入口。开启 JavaScript 可提前加载真实首页并体验放大转场。</div></noscript>
+  <noscript><p class="noscript-note">点击 TYC Phigros 即可进入游戏。</p></noscript>
 </body>
 </html>

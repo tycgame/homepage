@@ -8,11 +8,11 @@ export function startProjectPreloads({motionEnabled,notify}) {
     for(const link of projectLinks.get(entry.id)||[]) {
       link.dataset.preloadState=state;
       const label=link.querySelector('[data-project-status]');
-      if(label)label.textContent=state==='ready'?'首页已就绪 · 实时预载':state==='error'?'首页预载未完成 · 点按重试':'首页预载中…';
+      if(label)label.textContent=state==='ready'?'开场已准备':state==='error'?'点击进入游戏':'正在准备开场…';
     }
   }
   const pool=new ProjectPreloader({
-    createSlot:(project,src)=>createProjectStage(project,src,{root,template,onClose:()=>navigation.close()}),
+    createSlot:(project,src)=>createProjectStage(project,src,{root,template}),
     onState:renderState,
     onReady:()=>queueMicrotask(()=>{if(!document.hidden&&!navigation.isOpen)pool.checkForUpdates({force:true});})
   });
@@ -28,7 +28,7 @@ export function startProjectPreloads({motionEnabled,notify}) {
       }catch{link.dataset.preloadState='unsupported';}
     }
   }
-  scan();navigation.restoreRoute();
+  scan();navigation.restoreLegacyRoute();
   const observer=new MutationObserver(records=>{
     if(records.some(record=>[...record.addedNodes].some(node=>node.nodeType===1&&(node.matches?.('a[data-project]')||node.querySelector?.('a[data-project]')))))scan();
   });
